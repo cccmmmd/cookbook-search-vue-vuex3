@@ -14,9 +14,23 @@ export function searchMealsbyLetter({commit}, letter){
     })
 }
 
+export function mealsByIngredientList({commit}, ing){
+    axiosClient.get(`list.php?i=${ing}`)
+    .then(({data}) => {
+        commit('setMealsbyIngredientList', data.meals)
+    })
+}
+
 export function searchMealsbyIngredient({commit}, ing){
     axiosClient.get(`filter.php?i=${ing}`)
     .then(({data}) => {
         commit('setMealsbyIngredient', data.meals)
+    })
+}
+
+export function searchMealsbyCategory({commit}, cate){
+    axiosClient.get(`filter.php?c=${cate}`)
+    .then(({data}) => {
+        commit('setMealsbyCategory', data.meals)
     })
 }

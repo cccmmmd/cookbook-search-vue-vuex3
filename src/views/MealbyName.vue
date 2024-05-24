@@ -1,13 +1,19 @@
 <template>
-    <div class="p-8 pb-2">
-        <input type="text" 
-        v-model="keyword"
-        class="rounded border-2 border-gray-200 w-full" 
-        placeholder="搜尋料理"
-        @change="searchMeals('all')"/>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-5 p-5">
-      <Mealitem v-for="meal of meals" :key="meal.idMeal" :meal="meal"/>
+    <div class="p-8">
+        <h1 class="text-4xl font-bold mb-0 text-yellow-700">搜尋料理名稱</h1>
+        <div class="py-5">
+            <input type="text" 
+            v-model="keyword"
+            class="rounded border-2 border-gray-200 w-full" 
+            placeholder="輸入料理名稱"
+            @change="searchMeals"/>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 py-5">
+        <Mealitem v-for="meal of meals" :key="meal.idMeal" :meal="meal"/>
+        </div>
+        <div v-if="!meals.length" class="flex justify-center text-gray-600">
+            沒有資料
+        </div>
     </div>
 </template>
 <script setup>
@@ -23,13 +29,18 @@ const meals = computed(() =>
     store.state.searchMeals
 )
 
-function searchMeals(params) {
-    store.dispatch('searchMeals', keyword.value? keyword.value : params )
+function searchMeals() {
+    // if(keyword.value){
+    //     store.dispatch('searchMeals', keyword.value)
+    // } else {
+    //     store.commit('setSearchMeals',[])
+    // }
+    store.dispatch('searchMeals', keyword.value? keyword.value : 'All' )
 }
 
 onMounted(()=> {
    keyword.value = route.params.name
-   searchMeals('all')
+   searchMeals()
 })
 </script>
 <style>
