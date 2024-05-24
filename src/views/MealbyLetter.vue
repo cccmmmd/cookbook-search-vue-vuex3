@@ -32,20 +32,22 @@ const route = useRoute()
 const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
 const meals = computed(()=> store.state.mealsbyLetter)
 
-
-
-watch(route, ()=>{
-   
+const mealsapi = () => {
     if(route.params.letter){
         store.dispatch('searchMealsbyLetter', route.params.letter)
     }else {
         store.dispatch('searchMealsbyLetter', 'A')
     }
+}
+
+watch(route, ()=>{
+   
+    mealsapi()
     
 })
 
 onMounted(()=>{
-    store.dispatch('searchMealsbyLetter', 'A')
+    mealsapi()
 })
 
 
