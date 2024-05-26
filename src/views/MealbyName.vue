@@ -5,7 +5,7 @@
             <input type="text" 
             v-model="keyword"
             class="rounded border-2 border-gray-200 w-full" 
-            placeholder="輸入料理名稱"
+            placeholder="輸入料理名稱英文"
             @change="searchMeals"/>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-5 py-5">

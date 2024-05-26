@@ -1,6 +1,6 @@
 <template>
     <div class="p-8 pt-3">
-        <a @click="goBack" class="text-yellow-700 block py-2 cursor-pointer "> < Go Back</a>
+        <a @click="goBack" class="text-yellow-700 block py-2 cursor-pointer "> < 上一頁</a>
         <h1 class="text-4xl font-bold mb-4 text-yellow-700">{{route.params.ingredient}}  下有：</h1>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-5 py-5">
             <Mealitem v-for="meal of meals" :key="meal.idMeal" :meal="meal"/>

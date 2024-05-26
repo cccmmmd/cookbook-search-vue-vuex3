@@ -1,6 +1,6 @@
 <template>
     <div class="p-8 pt-3">
-        <a @click="goBack" class="text-yellow-700 block py-2 cursor-pointer "> < Go Back</a>
+        <a @click="goBack" class="text-yellow-700 block py-2 cursor-pointer "> < 上一頁</a>
     <div class="max-w-[800px] mx-auto py-4">
         <h1 class="text-yellow-700 text-5xl font-bold mb-5">{{ meal.strMeal }}</h1>
         <img :src="meal.strMealThumb" :alt="meal.strMeal" class="max-w-100">
@@ -43,9 +43,9 @@
             </div>
         </div>
         <div class="mt-4">
-            <YoutubeButton :href="meal.strYoutube">Go To Youtube</YoutubeButton>
+            <YoutubeButton :href="meal.strYoutube">去 Youtube</YoutubeButton>
             <a :href="meal.strSource" target="_blank" class="inline-block ml-3 px-3 py-2 rounded text-indigo-600 border-2 border-indigo-400 hover:bg-indigo-400 hover:text-white ">
-                View orginal Source
+                食譜來源
             </a>
         </div>
     </div>

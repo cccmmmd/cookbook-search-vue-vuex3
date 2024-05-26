@@ -8,7 +8,7 @@
                 <p class="mb-4 truncate ..." v-if="meal.strInstructions">{{ meal.strInstructions }}</p>
             <div class="py-3 flex justify-between">
                 <YoutubeButton v-if="meal.strYoutube" :href="meal.strYoutube">Youtube</YoutubeButton>
-                <router-link :to="{name: 'mealDetails', params: {id: meal.idMeal}}" class="px-3 py-2 text-blue-600 rounded border-2 border-blue-400 hover:bg-blue-400 hover:text-white">View</router-link>
+                <router-link :to="{name: 'mealDetails', params: {id: meal.idMeal}}" class="px-3 py-2 text-blue-600 rounded border-2 border-blue-400 hover:bg-blue-400 hover:text-white">更多</router-link>
             </div>
             </div>
         </div>
