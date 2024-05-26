@@ -1,6 +1,6 @@
 <template>
     <div class="p-8">
-        <h1 class="text-4xl font-bold mb-0 text-yellow-700">料理主要分類</h1>
+        <h1 class="text-4xl font-bold mb-0 text-yellow-700">料理分類</h1>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-5 py-5">
             <template v-for="meal of categories.categories" :key="meal.idCategory">
                 <div class=" bg-white shadow rounded-xl">
