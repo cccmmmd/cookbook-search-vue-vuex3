@@ -1,7 +1,7 @@
 export default {
-    searchMeals: [],
-    mealsbyLetter: [],
-    mealsbyIngredientList: [],
-    mealsbyCategory: [],
-    mealsbyIngredient: []
-}
+	searchMeals: [],
+	mealsbyLetter: [],
+	mealsbyIngredientList: [],
+	mealsbyCategory: [],
+	mealsbyIngredient: [],
+};
