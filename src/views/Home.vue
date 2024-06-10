@@ -34,7 +34,7 @@ import { computed, onMounted, ref } from "vue";
 import store from "../store";
 const categories = computed(() => store.state.categories);
 
-onMounted(async () => {
+onMounted(() => {
 	store.dispatch("categories");
 });
 </script>
