@@ -1,5 +1,11 @@
 import axiosClient from "../axiosClient";
 
+export function categories({commit}){
+	axiosClient.get("/categories.php").then(({ data }) => {
+		commit("setCategory", data.categories);
+	});
+}
+
 export function searchMeals({ commit }, keyword) {
 	axiosClient.get(`search.php?s=${keyword}`).then(({ data }) => {
 		commit("setSearchMeals", data.meals);

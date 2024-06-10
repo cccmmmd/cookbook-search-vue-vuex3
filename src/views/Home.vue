@@ -3,7 +3,7 @@
 		<h1 class="text-4xl font-bold mb-0 text-yellow-700">料理分類</h1>
 		<div class="grid grid-cols-1 md:grid-cols-3 gap-5 py-5">
 			<template
-				v-for="meal of categories.categories"
+				v-for="meal of categories"
 				:key="meal.idCategory"
 			>
 				<div class="bg-white shadow rounded-xl">
@@ -32,12 +32,10 @@
 <script setup>
 import { computed, onMounted, ref } from "vue";
 import store from "../store";
-import axiosClient from "../axiosClient.js";
+const categories = computed(() => store.state.categories);
 
-const categories = ref([]);
 onMounted(async () => {
-	const res = await axiosClient.get("/categories.php");
-	categories.value = res.data;
+	store.dispatch("categories");
 });
 </script>
 <style></style>

@@ -40,7 +40,7 @@ import store from "../store";
 
 const keyword = ref("");
 const meals = computed(() => store.state.mealsbyIngredientList);
-console.log(meals.value);
+
 
 const computedIngredient = computed(() => {
 	return meals.value.filter((i) =>

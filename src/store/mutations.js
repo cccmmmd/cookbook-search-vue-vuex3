@@ -1,3 +1,7 @@
+export function setCategory(state, categories) {
+	state.categories = categories || [];
+}
+
 export function setSearchMeals(state, meals) {
 	state.searchMeals = meals || [];
 }
