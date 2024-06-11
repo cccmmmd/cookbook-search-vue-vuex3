@@ -20,11 +20,12 @@
 </template>
 <script setup>
 import { computed, ref, onMounted } from "vue";
-import { useRoute } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 import store from "../store";
 import Mealitem from "../components/Mealitem.vue";
 
 const route = useRoute();
+const router = useRouter();
 const keyword = ref("");
 const meals = computed(() => store.state.searchMeals);
 
@@ -35,6 +36,7 @@ function searchMeals() {
 	//     store.commit('setSearchMeals',[])
 	// }
 	store.dispatch("searchMeals", keyword.value ? keyword.value : "All");
+	router.push({ path: `/by-name/${keyword.value}` })
 }
 
 onMounted(() => {
