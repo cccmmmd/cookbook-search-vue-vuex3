@@ -8,6 +8,7 @@ import MealbyIngredient from "../views/MealbyIndregient.vue";
 import MealbyCategory from "../views/MealbyCategory.vue";
 import MealDetails from "../views/MealDetails.vue";
 import Indregients from "../views/Indregients.vue";
+import noFound from "../views/404.vue";
 
 const routes = [
 	{
@@ -52,9 +53,9 @@ const routes = [
 		],
 	},
 	{
-		path: "/guest",
-		component: GuestLayout,
-	},
+		path: '/:pathMatch(.*)*',
+		redirect: "/",
+	  }
 ];
 
 const router = createRouter({
