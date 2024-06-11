@@ -30,7 +30,7 @@
 	</div>
 </template>
 <script setup>
-import { computed, onMounted, ref } from "vue";
+import { computed, onMounted } from "vue";
 import store from "../store";
 const categories = computed(() => store.state.categories);
 

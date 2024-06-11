@@ -12,7 +12,7 @@
 	</div>
 </template>
 <script setup>
-import { computed, onMounted, ref } from "vue";
+import { computed, onMounted } from "vue";
 import store from "../store";
 import { useRoute, useRouter } from "vue-router";
 import Mealitem from "../components/Mealitem.vue";
@@ -21,7 +21,6 @@ const route = useRoute();
 const router = useRouter();
 const meals = computed(() => store.state.mealsbyCategory);
 
-const categories = ref([]);
 
 onMounted(() => {
 	store.dispatch("searchMealsbyCategory", route.params.category);
