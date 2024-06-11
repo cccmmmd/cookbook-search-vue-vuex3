@@ -36,7 +36,8 @@ function searchMeals() {
 	//     store.commit('setSearchMeals',[])
 	// }
 	store.dispatch("searchMeals", keyword.value ? keyword.value : "All");
-	router.push({ path: `/by-name/${keyword.value}` })
+	if (keyword.value !== undefined)
+		router.push({ path: `/by-name/${keyword.value}` })
 }
 
 onMounted(() => {
